@@ -17,7 +17,17 @@ function validateName(){
 }
 
 function validateEmail(){
+  const email = document.getElementById('email');
+  
+  //something@something.com - TLD 2 to 5 chars
+  let re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.(\w{2,5})$/;
 
+  if(!re.test(email.value)){
+    email.classList.add('is-invalid');
+  } else{
+    email.classList.remove('is-invalid');
+
+  }
 }
 
 function validateZip(){
