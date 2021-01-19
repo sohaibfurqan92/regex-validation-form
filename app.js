@@ -45,5 +45,15 @@ function validateZip(){
 }
 
 function validatePhone(){
+  const phone = document.getElementById('phone');
+  
+//USA phone number with just the number also acceptable
+  let re = /^\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$/;
 
+  if(!re.test(phone.value)){
+    phone.classList.add('is-invalid');
+  } else{
+    phone.classList.remove('is-invalid');
+
+  }
 }
